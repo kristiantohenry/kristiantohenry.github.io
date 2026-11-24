@@ -6,11 +6,13 @@
  
 <!-- EDIT: your name and a one-sentence description (shown in Google and link previews) -->
 <title>Henry Kristianto · Portfolio</title>
-<meta name="description" content="Your Name — your role, what you work on, where you're based.">
-<meta property="og:title" content="Your Name">
-<meta property="og:description" content="Your role, what you work on, where you're based.">
+<meta name="description" content="Henry Kristianto: mechanical engineer specialising in vibration analysis and machine condition monitoring. Based in Jakarta, Indonesia.">
+<meta property="og:title" content="Henry Kristianto · Mechanical Engineer">
+<meta property="og:description" content="Mechanical engineer specialising in vibration analysis and machine condition monitoring.">
 <meta property="og:type" content="website">
-<!-- EDIT (optional): add a preview image, e.g. <meta property="og:image" content="https://yourname.com/assets/preview.jpg"> -->
+<!-- Preview image for LinkedIn/WhatsApp. EDIT: change the address once your own domain is connected. -->
+<meta property="og:image" content="https://kristiantohenry.github.io/assets/photo.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231D2126'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23FBFBFA' text-anchor='middle'%3EHK%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,6 +173,11 @@
     font-size: 0.8125rem; color: var(--muted);
     border: 1px solid var(--rule); border-radius: 999px; padding: 0.15rem 0.65rem;
   }
+  /* Results: the measured outcome of each project */
+  .results { display: flex; flex-wrap: wrap; gap: 0.75rem 2.25rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+  .results li { display: flex; flex-direction: column; }
+  .results strong { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .results span { color: var(--muted); font-size: 0.875rem; }
   .project .links { margin: 1rem 0 0; display: flex; gap: 1.25rem; font-size: 0.9375rem; }
   .thumb {
     aspect-ratio: 4 / 3; background: var(--wash); border: 1px solid var(--rule);
@@ -237,7 +244,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="wordmark" href="#top">[Your Name]</a>
+    <a class="wordmark" href="#top">Henry Kristianto</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#work">Work</a>
@@ -258,7 +265,7 @@
         <!-- EDIT: your name. A line break between first and last name looks best. -->
         <h1>Henry<br>Kristianto</h1>
         <!-- EDIT: one sentence about what you do and what you care about -->
-        <p class="lede">A Mechanical Engineer focused on keeping machineries up and running. I performed vibration analysis and temperature monitoring to assess machineries condition.</p>
+        <p class="lede">Mechanical engineer specialising in machine condition monitoring. I use vibration analysis and thermography to find faults before they stop production.</p>
         <p class="meta">
           <span>Jakarta, Indonesia</span>
           <!-- EDIT: change or delete this status line -->
@@ -286,11 +293,16 @@
         <!-- Project 1 — copy a whole <li class="project"> block to add more -->
         <li class="project">
           <div>
-            <h3>Vibration Control Uisng Dynamic Vibration Absorber</h3>
+            <h3>Vibration Control Using a Dynamic Vibration Absorber</h3>
             <p class="role">Designer · 2026</p>
-            <p class="desc">A hydraulic pump exhibited extreme vibration due to resonance phenomenon. I designed a Dynamic Vibration Absorber to shift the system natural frequencies away from the rotating speed frequency. This solution has been proven effective to reduce 67% of overall vibration, potentially saving the company of over 5,000 USD per annum. </p>
-            <ul class="tags"><li>Phyton</li><li>SKF Microlog</li><li>SKF @ptitude</li></ul>
-            <p class="links"><a href="#">View project</a><a href="#">Source code</a></p>
+            <p class="desc">A hydraulic pump was vibrating excessively because it ran close to resonance. I designed a dynamic vibration absorber that shifted the system's natural frequencies away from the running speed.</p>
+            <ul class="results">
+              <li><strong>−67%</strong><span>overall vibration</span></li>
+              <li><strong>$5,000+</strong><span>potential savings per year</span></li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>SKF Microlog</li><li>SKF @ptitude</li></ul>
+            <!-- Optional: add links to a write-up or report, e.g.
+            <p class="links"><a href="https://...">Read the case study</a></p> -->
           </div>
           <!-- EDIT: <img class="thumb" src="assets/project1.jpg" alt="Screenshot of Project name"> -->
                     <img class="thumb" src="assets/project1.png" alt="Dynamic vibration absorber mounted on the hydraulic pump">
@@ -301,10 +313,13 @@
           <div>
             <h3>Exhaust Fan Resonance Mitigation</h3>
             <p class="role">Designer · 2026</p>
-            <p class="desc">For almost a decade, an exhaust fan has been vibrating heavily due to resonance phenomenon. I performed modal analysis and modify the mounting structure accordingly, resulting 94% drops of overall vibration level. This solution potentially save the company 15,000 USD per annum.</p>
+            <p class="desc">An exhaust fan had vibrated heavily for almost a decade because of structural resonance. I ran a modal analysis and redesigned the mounting structure to move its natural frequencies.</p>
+            <ul class="results">
+              <li><strong>−94%</strong><span>overall vibration</span></li>
+              <li><strong>$15,000</strong><span>potential savings per year</span></li>
+            </ul>
 			
             <ul class="tags"><li>ANSYS</li><li>SKF Microlog</li></ul>
-            <p class="links"><a href="#">View project</a></p>
           </div>
                     <img class="thumb" src="assets/project2.png" alt="Modified mounting structure of the exhaust fan">
         </li>
@@ -313,11 +328,9 @@
         <li class="project">
           <div>
             <h3>Eddy Current Non-Destructive Evaluation</h3>
-            <p class="role">Research Assisstant · 2025</p>
-            <p class="desc">The effect of surface roughness on eddy current sensor accuracy had been studied at low and high frequency but not in the mid-high frequency. This researched establisheda quantitative relationship between surface roughness
-parameters and eddy current sensor response in this frequency range.</p>
+            <p class="role">Research Assistant · Aalto University · 2025</p>
+            <p class="desc">How surface roughness affects eddy current sensor accuracy had been studied at low and high frequencies, but not in the mid-to-high range. This research established a quantitative relationship between surface roughness parameters and sensor response in that range.</p>
             <ul class="tags"><li>Impedance Analyzer</li><li>Eddy Current Sensor</li><li>MATLAB</li></ul>
-            <p class="links"><a href="#">View project</a></p>
           </div>
                     <img class="thumb" src="assets/project3.png" alt="Eddy current sensor test setup">
         </li>
@@ -331,9 +344,9 @@ parameters and eddy current sensor response in this frequency range.</p>
     <div class="wrap section-grid">
       <h2>About</h2>
       <div class="prose">
-        <p>A lifelong learner who's currently working as a Reliabiltity Condition Monitoring engineer in a pulp and paper industry.</p>
-        <p>What I like the most from my work is that I get to talk with the machines through vibration analysis. </p>
-        <p>I enjoy spending my time in the nature where I can follow a circling trail.</p>
+        <p>I'm a reliability and condition monitoring engineer in the pulp and paper industry, with an MSc in Mechanical Engineering from Aalto University in Finland.</p>
+        <p>What I enjoy most about my work is that vibration analysis lets me listen to machines. Every machine has a signature, and small changes in it tell me something is wrong long before it breaks down.</p>
+        <p>I'm a lifelong learner. Away from work, I like spending time in nature, hiking loop trails.</p>
       </div>
     </div>
   </section>
@@ -345,52 +358,52 @@ parameters and eddy current sensor response in this frequency range.</p>
       <!-- Newest first. Copy an <li> to add more. -->
       <ol class="timeline" reversed>
         <li>
-          <span class="when">02/26 – now</span>
+          <span class="when">Feb 2026 – now</span>
           <div>
             <h3>Reliability Condition Monitoring Engineer <span class="org">· APRIL</span></h3>
-            <p>Improving equipment OEE by performing vibration analysis.</p>
+            <p>Improve equipment OEE through vibration analysis and condition monitoring.</p>
           </div>
         </li>
 		<li>
-          <span class="when">01/25 – 07/25</span>
+          <span class="when">Jan – Jul 2025</span>
           <div>
-            <h3>Research Assisstant <span class="org">· Aalto University</span></h3>
-            <p>I did a research in the field of eddy current based condition monitoring sensor.</p>
+            <h3>Research Assistant <span class="org">· Aalto University</span></h3>
+            <p>Researched eddy current sensors for condition monitoring.</p>
           </div>
         </li>
         <li>
-          <span class="when">08/23 – 07/25</span>
+          <span class="when">Aug 2023 – Jul 2025</span>
           <div>
             <h3>MSc. Mechanical Engineering <span class="org">· Aalto University</span></h3>
-            <p>I got invaluable opportunities to develop myself through student projects like Product Development Project, Mechatronics Machine Design and Machine Design.</p>
+            <p>Hands-on student projects in Product Development, Mechatronics Machine Design and Machine Design.</p>
           </div>
         </li>
         <li>
-          <span class="when">05/24 – 08/24</span>
+          <span class="when">May – Aug 2024</span>
           <div>
             <h3>Summer Trainee in Quality and Finishing Department <span class="org">· Bluefors Oy</span></h3>
-            <p>I perform quality assessment on supplier and workshop items as per company quality standard.</p>
+            <p>Inspected supplier and workshop parts against company quality standards.</p>
           </div>
         </li>
 		<li>
-          <span class="when">12/23</span>
+          <span class="when">Dec 2023</span>
           <div>
             <h3>Christmas Worker <span class="org">· Posti Oy</span></h3>
-            <p>I worked as a mail sorter during the Christmas season at Posti Warehouse.</p>
+            <p>Sorted mail at a Posti warehouse during the Christmas peak season.</p>
           </div>
         </li>
 		<li>
-          <span class="when">07/17 – 08/23</span>
+          <span class="when">Jul 2017 – Aug 2023</span>
           <div>
-            <h3>Quality Manager and Calibration engineer <span class="org">· PT Siwali Swantika</span></h3>
-            <p>I developed our calibration laboratory QMS and perform calibration services.</p>
+            <h3>Quality Manager and Calibration Engineer <span class="org">· PT Siwali Swantika</span></h3>
+            <p>Developed the calibration laboratory's quality management system and performed calibration services.</p>
           </div>
         </li>
 		<li>
-          <span class="when">08/12 – 06/16</span>
+          <span class="when">Aug 2012 – Jun 2016</span>
           <div>
-            <h3>B. Eng Mechanical Engineering <span class="org">· Diponegoro University</span></h3>
-            <p>I conducted research in comparative study of three different control method such as PID, SMC, and ANC in a simulation of a therapeutic pool control system.</p>
+            <h3>BEng Mechanical Engineering <span class="org">· Diponegoro University</span></h3>
+            <p>Thesis comparing three control methods (PID, SMC and ANC) in a simulated therapeutic pool control system.</p>
           </div>
         </li>
       </ol>
@@ -419,7 +432,6 @@ parameters and eddy current sensor response in this frequency range.</p>
         <div>
           <dt>Languages</dt>
           <dd><ul class="chips">
-          <dd><ul class="chips">
             <li>Indonesian<span class="level">Native</span></li>
             <li>English<span class="level">Fluent</span></li>
             <li>German<span class="level">Basic</span></li>
@@ -440,11 +452,11 @@ parameters and eddy current sensor response in this frequency range.</p>
         <p class="contact-big">
           <a class="email-link" href="#contact" data-user="henrykristianto1994" data-domain="gmail.com">Send me an email</a>
         </p>
-        <p class="contact-note">Happy to connect!</p>
+        <p class="contact-note">Open to roles in reliability, condition monitoring and maintenance engineering from January 2027. Happy to connect.</p>
         <ul class="socials">
           <!-- EDIT: your profile links. Delete any you don't use. -->
           <li><a href="https://www.linkedin.com/in/henry-kristianto-7a8a708b">LinkedIn</a></li>
-          <li><a href="https://github.com/your-handle">GitHub</a></li>
+          <li><a href="https://github.com/kristiantohenry">GitHub</a></li>
           <!-- <li><a href="https://www.instagram.com/your-handle">Instagram</a></li> -->
         </ul>
       </div>
@@ -455,8 +467,8 @@ parameters and eddy current sensor response in this frequency range.</p>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© <span id="year">2026</span> [Your Name]</span>
-    <span>[City]</span>
+    <span>© <span id="year">2026</span> Henry Kristianto</span>
+    <span>Jakarta, Indonesia</span>
   </div>
 </footer>
 
